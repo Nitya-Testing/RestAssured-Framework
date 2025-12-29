@@ -1,17 +1,23 @@
 package com.qa.api.base;
 
+import org.testng.annotations.BeforeTest;
+
+import com.qa.api.client.RestClient;
+
 public class BaseTest {
 	
-	//******************* API BASE URLs ****************************
-	protected final static String BASE_URL_GOREST = "https://gorest.co.in";
+	//********** API Base URLs *******************************
+	protected static final String BASE_URL_GOREST = "https://gorest.co.in";
 	
 	
-	//Before Test - Setup method
+	//********** API End Points *******************************
+	protected static final String GOREST_USERS_ENDPOINT = "/public/v2/users";
 	
+	protected RestClient restClient;
 	
-	
-	
-	
-	//After Test  - Tear Down Method
+	@BeforeTest
+	public void initSetup() {
+		restClient = new RestClient();
+	}
 
 }

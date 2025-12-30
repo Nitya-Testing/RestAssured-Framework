@@ -11,10 +11,10 @@ import com.qa.api.utils.StringUtils;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 
-public class UpdateUserTest extends BaseTest {
+public class DeleteUserTest extends BaseTest {
 	
 	@Test
-	public void createUserAndUpdateTest() {
+	public void deleteUser() {
 		//Create User
 		User newUser = new User("Amit", StringUtils.getRandomEmailId(), "male", "active");
 		
@@ -28,13 +28,10 @@ public class UpdateUserTest extends BaseTest {
 		Response responseGet = restClient.get(BASE_URL_GOREST, GOREST_USERS_ENDPOINT+"/"+userId, null, null, AuthType.BEARER_TOKEN, ContentType.JSON);
 		Assert.assertEquals(responseGet.jsonPath().getInt("id"), userId);
 		
-		//update the same user
-		newUser.setName("Kamit");
-		newUser.setStatus("inactive");
-		Response responsePut = restClient.put(BASE_URL_GOREST, GOREST_USERS_ENDPOINT+"/"+userId, newUser, null, null, AuthType.BEARER_TOKEN, ContentType.JSON);
-		Assert.assertEquals(responsePut.jsonPath().getString("name"), newUser.getName());
-		Assert.assertEquals(responsePut.jsonPath().getString("status"), newUser.getStatus());
+		//Delete User
+		Response responseDelete = restClient.delete(BASE_URL_GOREST, GOREST_USERS_ENDPOINT+"/"+userId, AuthType.BEARER_TOKEN, ContentType.JSON);
+		Assert.assertEquals(responseDelete.statusCode(), 204);
+
 	}
-	
-	
+
 }

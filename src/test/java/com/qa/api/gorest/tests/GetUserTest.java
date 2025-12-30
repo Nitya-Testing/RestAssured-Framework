@@ -1,5 +1,8 @@
 package com.qa.api.gorest.tests;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -15,6 +18,16 @@ public class GetUserTest extends BaseTest {
 	public void getAllUsersTest() {
 	Response response =	restClient.get(BASE_URL_GOREST, GOREST_USERS_ENDPOINT, null, null, AuthType.BEARER_TOKEN, ContentType.JSON);
 	Assert.assertEquals(response.statusCode(), 200);
+	}
+	
+	@Test
+	public void getAllUsersWithQueryParam() {
+		Map<String,String> queryMap = new HashMap<>();
+		queryMap.put("name", "Naveen");
+		queryMap.put("status", "active");
+		Response response =	restClient.get(BASE_URL_GOREST, GOREST_USERS_ENDPOINT, null, queryMap, AuthType.BEARER_TOKEN, ContentType.JSON);
+		Assert.assertEquals(response.statusCode(), 200);
+		
 	}
 
 }

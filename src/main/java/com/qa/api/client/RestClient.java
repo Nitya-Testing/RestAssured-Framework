@@ -1,10 +1,12 @@
 package com.qa.api.client;
 
 import java.io.File;
+import java.util.Base64;
 import java.util.Map;
 
 import com.qa.api.constants.AuthType;
 import com.qa.api.exceptions.APIExceptions;
+import com.qa.api.manager.ConfigManager;
 
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
@@ -27,11 +29,11 @@ public class RestClient {
 
 		switch (authType) {
 		case BEARER_TOKEN:
-			request.header("Authorization", "Bearer 120c4667fe92fd1b40733ae5aa40f9435c0653d197693bb2e885ac1748ea8bf7");
+			request.header("Authorization", "Bearer "+ ConfigManager.get("bearerToken"));
 			break;
 
 		case BASIC_AUTH:
-			request.header("Authorization", "Basic ");
+			request.header("Authorization", "Basic "+ generateBasicAuthToken());
 			break;
 
 		case API_KEY:
@@ -47,6 +49,11 @@ public class RestClient {
 		}
 
 		return request;
+	}
+	
+	private String generateBasicAuthToken() {
+		String credentials = ConfigManager.get("basicauthusername") + ":" + ConfigManager.get("basicauthpassowrd");
+		return Base64.getEncoder().encodeToString(credentials.getBytes());
 	}
 
 	private void applyParams(RequestSpecification request, Map<String, String> pathParms,
@@ -125,6 +132,28 @@ public class RestClient {
 
 		Response response = request.body(filePath).post(endPoint).then().spec(responseSpec200or201).extract()
 				.response();
+		response.prettyPrint();
+		return response;
+	}
+	
+	
+	/**
+	 * This method is used to get access token for Oauth2.0 based API calls.
+	 * @param baseUrl
+	 * @param endPoint
+	 * @param clientId
+	 * @param clientSecret
+	 * @param grantType
+	 * @param contentType
+	 * @return It will return the response of post call of Oauth2.0
+	 */
+	public Response post(String baseUrl, String endPoint, String clientId, String clientSecret, String grantType, ContentType contentType) {
+		RequestSpecification request = RestAssured.given().contentType(contentType)
+		.formParam("grant_type", grantType)
+		.formParam("client_id", clientId)
+		.formParam("client_secret", clientSecret);
+		
+		Response response = request.post(baseUrl+endPoint);
 		response.prettyPrint();
 		return response;
 	}

@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-12-30T18:38:09 IST" name="Default suite" finished-at="2025-12-30T18:38:16 IST" duration-ms="6996">
+  <suite started-at="2026-01-01T21:53:15 IST" name="Default suite" finished-at="2026-01-01T21:53:18 IST" duration-ms="3434">
     <groups>
     </groups>
-    <test started-at="2025-12-30T18:38:09 IST" name="Default test" finished-at="2025-12-30T18:38:16 IST" duration-ms="6996">
-      <class name="com.qa.api.gorest.tests.DeleteUserTest">
-        <test-method is-config="true" signature="initSetup()[pri:0, instance:com.qa.api.gorest.tests.DeleteUserTest@3349e9bb]" started-at="2025-12-30T18:38:09 IST" name="initSetup" finished-at="2025-12-30T18:38:09 IST" duration-ms="509" status="PASS">
+    <test started-at="2026-01-01T21:53:15 IST" name="Default test" finished-at="2026-01-01T21:53:18 IST" duration-ms="3434">
+      <class name="com.qa.api.heroku.auth.tests.AuthTest">
+        <test-method is-config="true" signature="initSetup()[pri:0, instance:com.qa.api.heroku.auth.tests.AuthTest@3349e9bb]" started-at="2026-01-01T21:53:15 IST" name="initSetup" finished-at="2026-01-01T21:53:16 IST" duration-ms="533" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initSetup -->
-        <test-method signature="deleteUser()[pri:0, instance:com.qa.api.gorest.tests.DeleteUserTest@3349e9bb]" started-at="2025-12-30T18:38:09 IST" name="deleteUser" finished-at="2025-12-30T18:38:16 IST" duration-ms="6446" status="PASS">
+        <test-method signature="basicAuthTest()[pri:0, instance:com.qa.api.heroku.auth.tests.AuthTest@3349e9bb]" started-at="2026-01-01T21:53:16 IST" name="basicAuthTest" finished-at="2026-01-01T21:53:18 IST" duration-ms="2855" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- deleteUser -->
-      </class> <!-- com.qa.api.gorest.tests.DeleteUserTest -->
+        </test-method> <!-- basicAuthTest -->
+      </class> <!-- com.qa.api.heroku.auth.tests.AuthTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

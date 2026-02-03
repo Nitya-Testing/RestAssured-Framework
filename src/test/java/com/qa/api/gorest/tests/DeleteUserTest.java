@@ -16,7 +16,7 @@ public class DeleteUserTest extends BaseTest {
 	@Test
 	public void deleteUser() {
 		//Create User
-		User newUser = new User("Amit", StringUtils.getRandomEmailId(), "male", "active");
+		User newUser = new User(null,"Amit", StringUtils.getRandomEmailId(), "male", "active");
 		
 		Response response = restClient.post(BASE_URL_GOREST, GOREST_USERS_ENDPOINT, newUser, null, null, AuthType.BEARER_TOKEN, ContentType.JSON);
 		Assert.assertEquals(response.getStatusCode(), 201);

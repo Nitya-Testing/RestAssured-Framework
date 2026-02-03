@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="1" total="2" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-01-20T21:56:26 IST" name="Default suite" finished-at="2026-01-20T21:56:29 IST" duration-ms="2988">
+  <suite started-at="2026-02-03T13:49:27 IST" name="Default suite" finished-at="2026-02-03T13:49:33 IST" duration-ms="5864">
     <groups>
     </groups>
-    <test started-at="2026-01-20T21:56:26 IST" name="Default test" finished-at="2026-01-20T21:56:29 IST" duration-ms="2988">
-      <class name="com.qa.api.spotify.tests.SpotifyAPITest">
-        <test-method is-config="true" signature="initSetup()[pri:0, instance:com.qa.api.spotify.tests.SpotifyAPITest@351d00c0]" started-at="2026-01-20T21:56:26 IST" name="initSetup" finished-at="2026-01-20T21:56:27 IST" duration-ms="513" status="PASS">
+    <test started-at="2026-02-03T13:49:27 IST" name="Default test" finished-at="2026-02-03T13:49:33 IST" duration-ms="5864">
+      <class name="com.qa.api.scehma.tests.GoRestApiSchemaTest">
+        <test-method is-config="true" signature="initSetup()[pri:0, instance:com.qa.api.scehma.tests.GoRestApiSchemaTest@799f10e1]" started-at="2026-02-03T13:49:27 IST" name="initSetup" finished-at="2026-02-03T13:49:27 IST" duration-ms="750" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initSetup -->
-        <test-method is-config="true" signature="getAccessToken()[pri:0, instance:com.qa.api.spotify.tests.SpotifyAPITest@351d00c0]" started-at="2026-01-20T21:56:27 IST" name="getAccessToken" finished-at="2026-01-20T21:56:29 IST" duration-ms="1986" status="PASS">
+        <test-method is-config="true" signature="goRestSetUp()[pri:0, instance:com.qa.api.scehma.tests.GoRestApiSchemaTest@799f10e1]" started-at="2026-02-03T13:49:27 IST" name="goRestSetUp" finished-at="2026-02-03T13:49:28 IST" duration-ms="3" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- getAccessToken -->
-        <test-method signature="getAlbumsTest()[pri:0, instance:com.qa.api.spotify.tests.SpotifyAPITest@351d00c0]" started-at="2026-01-20T21:56:29 IST" name="getAlbumsTest" finished-at="2026-01-20T21:56:29 IST" duration-ms="447" status="PASS">
+        </test-method> <!-- goRestSetUp -->
+        <test-method signature="createUserAPISchemaTest()[pri:0, instance:com.qa.api.scehma.tests.GoRestApiSchemaTest@799f10e1]" started-at="2026-02-03T13:49:28 IST" name="createUserAPISchemaTest" finished-at="2026-02-03T13:49:33 IST" duration-ms="5042" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- getAlbumsTest -->
-      </class> <!-- com.qa.api.spotify.tests.SpotifyAPITest -->
+        </test-method> <!-- createUserAPISchemaTest -->
+      </class> <!-- com.qa.api.scehma.tests.GoRestApiSchemaTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
